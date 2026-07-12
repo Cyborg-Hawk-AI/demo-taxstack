@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-900 text-slate-200 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-surface-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-surface-500 bg-surface-700 px-5 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-brand-500/50 hover:bg-surface-600 focus:outline-none focus:ring-2 focus:ring-brand-500/50;
+  }
+
+  .card {
+    @apply rounded-xl border border-surface-600 bg-surface-800 shadow-card;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl font-bold tracking-tight text-white sm:text-4xl;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}

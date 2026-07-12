@@ -1,0 +1,93 @@
+{
+  "idea": {
+    "name": "TaxStack",
+    "fingerprint": "tax-practice-all-in-one-hub-small-firm",
+    "pitch": "Replace TaxDome, DocuSign, and Goldmine with one affordable hub for small tax firms.",
+    "cluster": "Tax Practice Management Fragmentation",
+    "target_customer": "Solo and small-team tax preparers and bookkeepers (1\u201310 staff) paying $500\u2013$2,000/yr across fragmented tools",
+    "core_features": [
+      "Client portal with built-in e-signature (no DocuSign dependency)",
+      "Appointment scheduling with automated reminders via email/SMS",
+      "Document submission tracker with status pipeline (Requested \u2192 Received \u2192 In Review \u2192 Filed)",
+      "Custom client data fields for tax-specific data points (dependents, prior-year carryovers, entity type flags)",
+      "Automated client onboarding checklist emails triggered on new client creation"
+    ],
+    "pricing_model": "Per-seat SaaS subscription, annual billing discount",
+    "price_point": "$49/month per firm (up to 3 users) or $79/month for up to 10 users; annual = 2 months free",
+    "gtm_channel": "Reddit r/Accounting and r/taxpros organic posts + targeted Facebook Groups for tax professionals; cold email to NATP and NAEA member lists",
+    "competitive_landscape": "TaxDome ($600+/yr, complex), Canopy (expensive), Practice Ignition (proposal-focused). No sub-$600/yr all-in-one with custom fields and built-in e-sig targeting micro-firms.",
+    "unfair_advantage": "Built directly from the exact complaints in r/Accounting threads \u2014 custom fields, reliable e-sig, and scheduling in one tool at a price solo preparers can justify without enterprise contracts",
+    "mvp_estimate": "Next.js + Supabase + Resend (email) + Cal.com embed + DocuSeal (open-source e-sig); 3\u20134 weeks to working MVP",
+    "agentic_automation": "New client triggers automated onboarding email sequence via Resend webhooks; document status updates fire SMS reminders via Twilio cron; overdue document follow-ups run nightly cron job; billing via Stripe with automatic dunning; support handled by AI chat widget (OpenAI) trained on help docs.",
+    "origin_story": "In r/Accounting, a tax and bookkeeping business owner complained that their accounting software was being discontinued and that they were juggling QuickBooks Online, DocuSign, and Goldmine just to run a small practice \u2014 paying for three subscriptions and still hitting reliability issues with DocuSign where clients couldn't complete signatures. A second poster in the same community said TaxDome plus spreadsheets still wasn't enough because practice management tools 'don't accommodate tracking of detailed client data points' needed for tax prep, and they were building a custom internal solution just to fill the gap. Existing tools like TaxDome are priced and scoped for larger firms; solo preparers are left overpaying for complexity they don't need or stitching together tools that don't talk to each other.",
+    "automation_playbook": "Client onboarding: new Stripe subscription triggers a Supabase function that creates the client record and fires a welcome + document-request email sequence via Resend \u2014 zero human touch. Document follow-ups: a nightly cron checks for documents in 'Requested' status older than 3 days and sends an automated SMS reminder via Twilio. Appointment reminders: Cal.com webhooks trigger 24-hour and 1-hour SMS reminders automatically. Support: an AI chat widget answers common questions using a trained knowledge base; only escalations (estimated <2/week for a small user base) reach the owner via a shared inbox. Billing and renewals: fully Stripe-managed with automatic dunning emails. Estimated owner time: under 1.5 hours/week.",
+    "maintenance_hours_per_week": 1.5,
+    "keywords": [
+      "tax practice management software",
+      "TaxDome alternative",
+      "small tax firm software"
+    ],
+    "supporting_urls": [
+      "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "https://www.reddit.com/r/Accounting/comments/1udzgd3/anyone_else_feel_like_their_practice_management/"
+    ],
+    "weighted_total": 112,
+    "checklist": {
+      "ten_plus_posts_same_pain": true,
+      "paying_for_inferior_solution": true,
+      "reachable_channel": true,
+      "mvp_under_4_weeks": true,
+      "price_point_high_enough": true,
+      "hair_on_fire": true,
+      "can_presell": true,
+      "fewer_than_3_competitors": false,
+      "low_maintenance_ops": true
+    },
+    "checklist_passed": 8,
+    "momentum": "unknown",
+    "rising_queries": [],
+    "gate_result": "passed"
+  },
+  "pain_points": [
+    {
+      "problem": "Existing accounting software doesn't meet expectations, is being discontinued, or is overly complicated and expensive for the features offered.",
+      "persona": "Tax and bookkeeping business owner",
+      "current_workaround": "Using multiple tools: QuickBooks Online for bookkeeping, DocuSign for e-signatures, Goldmine for scheduling and client paperwork tracking",
+      "frequency": "daily",
+      "wtp_signal": "Currently paying for QuickBooks Online, DocuSign, and Goldmine subscriptions",
+      "url": "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "engagement": 0,
+      "source": "reddit"
+    },
+    {
+      "problem": "Practice management tools are restrictive and don't accommodate tracking of detailed client data points needed for tax preparation.",
+      "persona": "Tax accounting practice owner",
+      "current_workaround": "Using TaxDome plus spreadsheets to manually compile data; building custom solution internally",
+      "frequency": "daily",
+      "wtp_signal": "Spending ~$500 annually on software; investing time to build custom solution",
+      "url": "https://www.reddit.com/r/Accounting/comments/1udzgd3/anyone_else_feel_like_their_practice_management/",
+      "engagement": 0,
+      "source": "reddit"
+    },
+    {
+      "problem": "E-signature solution (DocuSign) has reliability issues with clients being unable to complete signatures.",
+      "persona": "Tax and bookkeeping business owner",
+      "current_workaround": "Currently using DocuSign despite frequent client sign-up failures",
+      "frequency": "weekly",
+      "wtp_signal": "Paying for DocuSign subscription",
+      "url": "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "engagement": 0,
+      "source": "reddit"
+    },
+    {
+      "problem": "Meeting scheduling and client paperwork tracking system is frustrating and unreliable.",
+      "persona": "Tax and bookkeeping business owner",
+      "current_workaround": "Using Goldmine for both scheduling and client document submission tracking",
+      "frequency": "daily",
+      "wtp_signal": "Paying for Goldmine subscription",
+      "url": "https://www.reddit.com/r/Accounting/comments/1u8u89k/looking_for_accounting_program_recommendations/",
+      "engagement": 0,
+      "source": "reddit"
+    }
+  ]
+}
